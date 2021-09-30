@@ -48,6 +48,12 @@ $this->context->layout = "@themeLayouts/full";
                     </div>
                     <div class="card-footer block-content block-content-full bg-gray-light">
                         <div class="pull-left float-left">
+                            <?php
+                                if(!$model->isNewRecord):
+                                    $urlForSet =rabint\helpers\uri::toApp('app',['/page/default/view', 'slug' => $model->slug]);
+                                    echo Html::a(Yii::t('rabint','تنظیمات سئو'),['/seo/admin-option/create','url'=>$urlForSet],['class'=>'btn btn-primary btn-flat',"target"=>"_BLANK"]);
+                                endif;
+                            ?>
                             <?php echo Html::submitButton($model->isNewRecord ? Yii::t('rabint',
                                 'Create') : Yii::t('rabint', 'Update'),
                                 ['class' => $model->isNewRecord ? 'btn btn-success btn-flat' : 'btn btn-primary btn-flat']) ?>

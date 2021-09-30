@@ -48,12 +48,17 @@ $this->params['breadcrumbs'][] = $this->title;
             'view',
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{appView} {update} {delete}',
+                'template' => '{appView} {update} {delete}<br>{addseo}',
                 'buttons' => [
                     'appView' => function ($url, $model) {
                         $url =rabint\helpers\uri::toApp('app',['/page/default/view', 'slug' => $model->slug]);
                         return Html::a('<span class="fas fa-eye"></span>', $url, [
                                     'title' => Yii::t('rabint', 'نمایش در سایت'), 'target' => '_BLANK']);
+                    },
+                    'addseo' => function ($url, $model) {
+                        $urlForSet =rabint\helpers\uri::toApp('app',['/page/default/view', 'slug' => $model->slug]);
+                        return Html::a('<span class="fas fa-poll"></span>', \yii\helpers\Url::to(['/seo/admin-option/create','url'=>$urlForSet]), [
+                                    'title' => Yii::t('rabint', 'افزودن سئو'), 'target' => '_BLANK']);
                     },
                         ],
                     ],
