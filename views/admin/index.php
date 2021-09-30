@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'view',
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{appView} {update} {delete}<br>{addseo}',
+                'template' => '{appView} {update} {delete}'.(class_exists(rabint\seo\services\SeoService::class)?'<br>{addseo}':''),
                 'buttons' => [
                     'appView' => function ($url, $model) {
                         $url =rabint\helpers\uri::toApp('app',['/page/default/view', 'slug' => $model->slug]);
