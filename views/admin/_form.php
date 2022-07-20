@@ -32,6 +32,22 @@ $this->context->layout = "@themeLayouts/full";
                 </div>
             </div>
         </div>
+        <div class="card block block-rounded">
+            <div class="card-header block-header block-header-default ">
+                <h3 class="block-title"><?= Yii::t('rabint', 'سئو'); ?></h3>
+            </div>
+
+            <div class="card-body block-content block-content-full">
+                <div class="page-form">
+                    <?= $form->field($model, 'seo_keywords')->textInput(['maxlength' => true])->hint(Yii::t('rabint','کلمات کلیدی را با "," جدا نمایید.')) ?>
+                    <?= $form->field($model, 'seo_schema_type')->dropDownList(\yii\helpers\ArrayHelper::getColumn(\rabint\page\models\Page::getSchemaTypes(),'title'),['maxlength' => true]) ?>
+                    <?= $form->field($model, 'seo_description')->textarea(['maxlength' => true]) ?>
+                    <?= $form->field($model, 'seo_video_url')->textInput(['maxlength' => true]) ?>
+                    <?= $form->field($model, 'seo_thumbnail_url')->textInput(['maxlength' => true]) ?>
+                    <?= $form->field($model, 'seo_image_url')->textInput(['maxlength' => true]) ?>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="col-sm-4">
         <div class="row">

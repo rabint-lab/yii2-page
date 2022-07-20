@@ -59,6 +59,9 @@ RET;
     <div class="row">
         <div class="col-sm-12">
             <div class="spacer"></div>
+            <?php
+            $prossed = \rabint\helpers\shortcode::renderShortcode($prossed);
+            ?>
             <?php echo $prossed; ?>
             <div class="spacer"></div>
         </div>

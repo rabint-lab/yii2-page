@@ -30,7 +30,8 @@ class Module extends \yii\base\Module
                 'label' => \Yii::t('rabint', 'مدیریت محتوا'),
                 'options' => ['class' => 'nav-main-heading'],
                 'visible' =>\rabint\helpers\user::can('manager'),
-            ], [
+            ],
+            [
                 'label' => \Yii::t('rabint', 'صفحات ایستا'),
                 'icon' => '<i class="fas fa-file-alt"></i>',
                 'url' => '#',

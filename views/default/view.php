@@ -25,6 +25,9 @@ RET;
 }, $model->body);
 
 ?>
+<?php
+$prossed = \rabint\helpers\shortcode::renderShortcode($prossed);
+?>
 <div class="content page_content">
     <?php echo $prossed; ?>
 </div>
