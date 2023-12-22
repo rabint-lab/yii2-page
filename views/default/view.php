@@ -7,7 +7,11 @@ $this->title = $model->title;
 
 //$this->params['breadcrumbs'][] = ['label' => Yii::t('rabint', 'Contacts'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
-
+$this->params['header'] = [
+    'title' => $this->title,
+    'thumbnail' => $model->meta_thumbnail,
+    'desc' => $model->excerpt,
+];
 $re = '/(<h(\d)([^>]*)>)(.+?)(<\/h\2>)/m';
 $re = '/(<h(\d)[^>]*>)(.+?)(<\/h\2>)/m';
 $prossed = preg_replace_callback($re, function ($match) {
