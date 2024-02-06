@@ -122,7 +122,7 @@ class Page extends ActiveRecord
             [['view'], 'integer'],
             [['template'], 'string', 'max' => 31],
             [['slug', 'title', 'template', 'body'], 'filter', 'filter' => '\yii\helpers\HtmlPurifier::process'],
-            [['meta_thumbnail', 'meta_summary'], 'string', 'max' => 255],
+            [['meta_thumbnail', 'meta_summary'], 'string'],
             [['seo_video_url', 'seo_thumbnail_url','seo_image_url'], 'string', 'max' => 255],
             [['seo_keywords','seo_description','seo_schema_type'], 'string'],
         ];

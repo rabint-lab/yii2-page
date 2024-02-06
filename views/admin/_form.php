@@ -22,7 +22,8 @@ $this->context->layout = "@themeLayouts/full";
                     <?php echo $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
                     <?php echo $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
                     
-                    <?php echo $form->field($model, 'meta_summary')->textarea(['maxlength' => true]) ?>
+                    <?php //echo $form->field($model, 'meta_summary')->textarea(['maxlength' => true]) ?>
+                    <?php echo $form->field($model, 'meta_summary')->textarea() ?>
 
                     <?= \rabint\helpers\widget::wysiwyg($form, $model, 'body', [], [
                         'options' => [
